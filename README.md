@@ -9,6 +9,9 @@ A homepage replica of the Adhishrihaan Foundation website, built using React and
 - Smooth scroll animations
 - Responsive design for different screen sizes
 
+## Live Demo
+https://clone-adhishrihaan.vercel.app/
+
 ## Tech Stack
 - React.js
 - Bootstrap 5

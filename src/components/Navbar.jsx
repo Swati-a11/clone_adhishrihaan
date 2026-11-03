@@ -1,12 +1,9 @@
-
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <header className="site-header">
       <nav className="navbar navbar-expand-lg navbar-dark nav-pill container-fluid">
-
-        {/* Logo */}
         <a
           className="navbar-brand logo-link"
           href="https://adhishrihaan.org/"
@@ -24,7 +21,6 @@ const Navbar = () => {
           />
         </a>
 
-        {/* Mobile Toggle */}
         <button
           className="navbar-toggler"
           type="button"
@@ -37,10 +33,8 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navigation Links */}
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav ms-auto align-items-lg-center">
-
             <li className="nav-item">
               <a className="nav-link" href="/">
                 Home
@@ -74,9 +68,7 @@ const Navbar = () => {
               </a>
             </li>
 
-            {/* Events Dropdown */}
             <li className="nav-item dropdown hover-dropdown">
-
               <a className="nav-link" href="/events/">
                 Events
               </a>
@@ -120,9 +112,7 @@ const Navbar = () => {
               </a>
             </li>
 
-            {/* Get Involved Dropdown */}
             <li className="nav-item dropdown hover-dropdown">
-
               <a className="nav-link" href="/get-involved/">
                 Get Involved
               </a>
@@ -153,7 +143,6 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
-
           </ul>
         </div>
       </nav>

@@ -41,7 +41,6 @@ const MainContent = () => {
     const root = mainRef.current;
     if (!root) return;
 
-    // Select all elements marked for scroll reveal
     const revealElements = root.querySelectorAll(".reveal-on-scroll");
     if (!revealElements.length) return;
 
@@ -50,7 +49,6 @@ const MainContent = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            // Run animation only once
             observer.unobserve(entry.target);
           }
         });
@@ -70,7 +68,6 @@ const MainContent = () => {
 
   return (
     <main ref={mainRef} className="main-content-section">
-      {/* 1. Green Ribbon Banner */}
       <section className="mission-ribbon">
         <div className="container text-center">
           <p className="mission-ribbon-text m-0">
@@ -79,7 +76,6 @@ const MainContent = () => {
         </div>
       </section>
 
-      {/* 2. Dark Green Intro & Mission Statement */}
       <section className="mission-intro reveal-on-scroll">
         <div className="container">
           <div className="row justify-content-center">
@@ -88,7 +84,6 @@ const MainContent = () => {
                 At Adhishrihaan Foundation, we believe true transformation begins at the roots. We are the steadfast support system for the unsung heroes of community development: grassroots NGOs, nurturing their vital work with unwavering care and commitment.
               </p>
 
-              {/* Action Links with Divider */}
               <div className="mission-action-links d-flex flex-column flex-md-row justify-content-center align-items-center">
                 <a href="/our-impact/" className="mission-action-link impact-link">
                   DISCOVER OUR IMPACT
@@ -103,28 +98,23 @@ const MainContent = () => {
         </div>
       </section>
 
-      {/* 3. What We Do / Our Pillars of Support */}
       <section className="pillars-section">
         <div className="container">
-          {/* Section Headings - Slides smoothly upward */}
           <div className="text-center pillars-heading-wrap reveal-on-scroll">
             <h2 className="pillars-main-title">WHAT WE DO</h2>
             <h3 className="pillars-subtitle">OUR PILLARS OF SUPPORT</h3>
           </div>
 
-          {/* Pillars List - Each pillar slides smoothly upward as it enters viewport */}
           <div className="pillars-list">
             {PILLARS.map((pillar) => (
               <div
                 key={pillar.id}
                 className="row pillar-row align-items-start reveal-on-scroll"
               >
-                {/* Left Title Column */}
                 <div className="col-12 col-md-4 col-lg-3 pillar-title-col">
                   <h4 className="pillar-name">{pillar.title}</h4>
                 </div>
 
-                {/* Right Description Column */}
                 <div className="col-12 col-md-8 col-lg-9 pillar-desc-col">
                   <p className="pillar-description">{pillar.description}</p>
                   <p className="pillar-care-in-action">{pillar.careInAction}</p>

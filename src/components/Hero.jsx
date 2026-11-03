@@ -36,7 +36,6 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
   };
 
-  // Auto-play slider every 5 seconds (pauses when user hovers)
   useEffect(() => {
     if (!isPaused) {
       timerRef.current = setInterval(handleNext, 5000);
@@ -50,10 +49,8 @@ const Hero = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-<div
-  className="hero-slider-wrapper position-relative w-100 overflow-hidden"
-  style={{ height: "700px", minHeight: "100px" }}
->        {SLIDES.map((slide, index) => {
+      <div className="hero-slider-wrapper position-relative w-100 overflow-hidden">
+        {SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
             <div
@@ -67,10 +64,8 @@ const Hero = () => {
               role="img"
               aria-label={slide.alt}
             >
-              {/* Bottom Action Buttons Container */}
               <div className="container hero-buttons-container position-relative h-100 d-flex align-items-end">
                 <div className="row w-100 align-items-center justify-content-between g-3">
-                  {/* Left Button Group: KNOW MORE & VOLUNTEER */}
                   <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-start gap-3">
                     <a href="/about-us/" className="hero-btn">
                       KNOW MORE
@@ -80,7 +75,6 @@ const Hero = () => {
                     </a>
                   </div>
 
-                  {/* Right Button Group: DONATE */}
                   <div className="col-12 col-md-auto d-flex justify-content-center justify-content-md-end">
                     <a href="/donate/" className="hero-btn hero-btn-donate">
                       DONATE
@@ -92,7 +86,6 @@ const Hero = () => {
           );
         })}
 
-       
         <button
           type="button"
           className="hero-nav-arrow hero-nav-prev"

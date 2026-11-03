@@ -131,118 +131,119 @@ export default function Events() {
           </div>
         </div>
 
-        {activeTab === "past" ? (
-          <div className="events-slider-wrapper events-reveal-item">
-            <div className="events-card-container">
-              <button
-                type="button"
-                className="events-nav-btn events-nav-prev"
-                onClick={handlePrev}
-                aria-label="Previous event"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+        <div className="events-outer-card events-reveal-item">
+          {activeTab === "past" ? (
+            <div className="events-card-wrapper">
+              <div className="events-card-container">
+                <button
+                  type="button"
+                  className="events-nav-btn events-nav-prev"
+                  onClick={handlePrev}
+                  aria-label="Previous event"
                 >
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
-              </button>
-
-              <div className="ngo-event-horizontal-card">
-                <div className="ngo-event-card-img-col">
-                  <img
-                    src={currentEvent.image}
-                    alt={currentEvent.title}
-                    className="ngo-event-card-img"
-                  />
-                </div>
-
-                <div className="ngo-event-card-body">
-                  <h3 className="ngo-event-card-title">{currentEvent.title}</h3>
-
-                  <div className="ngo-event-card-meta">
-                    <span className="ngo-meta-pill">
-                      <span className="ngo-meta-icon">📅</span>
-                      {currentEvent.date}
-                    </span>
-                    <span className="ngo-meta-pill">
-                      <span className="ngo-meta-icon">📍</span>
-                      {currentEvent.location}
-                    </span>
-                    <span className="ngo-meta-pill">
-                      <span className="ngo-meta-icon">🏢</span>
-                      {currentEvent.venue}
-                    </span>
-                  </div>
-
-                  <div className="ngo-event-card-chips">
-                    <span className="ngo-chip ngo-chip-status">
-                      {currentEvent.status}
-                    </span>
-                    <span className="ngo-chip ngo-chip-cause">
-                      {currentEvent.cause}
-                    </span>
-                  </div>
-
-                  <p className="ngo-event-card-text">{currentEvent.excerpt}</p>
-
-                  <a
-                    href={currentEvent.link}
-                    className="ngo-event-card-cta"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    Read More
-                  </a>
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+
+                <div className="ngo-event-horizontal-card">
+                  <div className="ngo-event-card-img-col">
+                    <img
+                      src={currentEvent.image}
+                      alt={currentEvent.title}
+                      className="ngo-event-card-img"
+                    />
+                  </div>
+
+                  <div className="ngo-event-card-body">
+                    <h3 className="ngo-event-card-title">{currentEvent.title}</h3>
+
+                    <div className="ngo-event-card-meta">
+                      <span className="ngo-meta-pill">
+                        <span className="ngo-meta-icon">📅</span>
+                        {currentEvent.date}
+                      </span>
+                      <span className="ngo-meta-pill">
+                        <span className="ngo-meta-icon">📍</span>
+                        {currentEvent.location}
+                      </span>
+                      <span className="ngo-meta-pill">
+                        <span className="ngo-meta-icon">🏢</span>
+                        {currentEvent.venue}
+                      </span>
+                    </div>
+
+                    <div className="ngo-event-card-chips">
+                      <span className="ngo-chip ngo-chip-status">
+                        {currentEvent.status}
+                      </span>
+                      <span className="ngo-chip ngo-chip-cause">
+                        {currentEvent.cause}
+                      </span>
+                    </div>
+
+                    <p className="ngo-event-card-text">{currentEvent.excerpt}</p>
+
+                    <a
+                      href={currentEvent.link}
+                      className="ngo-event-card-cta"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Read More
+                    </a>
+                  </div>
                 </div>
+
+                <button
+                  type="button"
+                  className="events-nav-btn events-nav-next"
+                  onClick={handleNext}
+                  aria-label="Next event"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
               </div>
 
-              <button
-                type="button"
-                className="events-nav-btn events-nav-next"
-                onClick={handleNext}
-                aria-label="Next event"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
+              <div className="events-pagination-dots">
+                {PAST_EVENTS.map((event, idx) => (
+                  <button
+                    key={event.id}
+                    type="button"
+                    className={`events-dot ${idx === currentIndex ? "active" : ""}`}
+                    onClick={() => setCurrentIndex(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
-
-            <div className="events-pagination-dots">
-              {PAST_EVENTS.map((event, idx) => (
-                <button
-                  key={event.id}
-                  type="button"
-                  className={`events-dot ${idx === currentIndex ? "active" : ""}`}
-                  onClick={() => setCurrentIndex(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
+          ) : (
+            <div className="events-empty-state">
+              <p className="events-empty-text">No events found.</p>
             </div>
-          </div>
-        ) : (
-          <div className="events-empty-state events-reveal-item">
-            <p className="events-empty-text">No events found.</p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );
 }
-

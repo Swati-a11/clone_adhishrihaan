@@ -64,12 +64,25 @@
 }
 
 .events-tab-btn:hover:not(.active) {
-  background-color: #f0fdf4;
+  background-color: #2B4D1B;
+  color: #ffffff;
+  border-color: #2B4D1B;
 }
 
-.events-slider-wrapper {
-  max-width: 1040px;
+.events-outer-card {
+  background-color: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 20px 20px 22px 20px;
+  max-width: 1080px;
   margin: 0 auto;
+}
+
+.events-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .events-card-container {
@@ -80,8 +93,7 @@
 .ngo-event-horizontal-card {
   background: #ffffff;
   border: 1px solid #E5E7EB;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -106,7 +118,7 @@
 
 .ngo-event-card-body {
   width: 60%;
-  padding: 32px 40px;
+  padding: 32px 38px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -214,7 +226,14 @@
   cursor: pointer;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.events-outer-card:hover .events-nav-btn {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .events-nav-btn:hover {
@@ -223,11 +242,11 @@
 }
 
 .events-nav-prev {
-  left: 16px;
+  left: 14px;
 }
 
 .events-nav-next {
-  right: 16px;
+  right: 14px;
 }
 
 .events-pagination-dots {
@@ -235,7 +254,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .events-dot {
@@ -255,14 +274,9 @@
 }
 
 .events-empty-state {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid #E5E7EB;
-  border-radius: 16px;
-  padding: 48px 24px;
+  padding: 60px 20px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .events-empty-text {
@@ -294,6 +308,10 @@
     font-size: 1rem;
   }
 
+  .events-outer-card {
+    padding: 14px 14px 18px 14px;
+  }
+
   .ngo-event-horizontal-card {
     flex-direction: column;
     min-height: auto;
@@ -307,7 +325,7 @@
 
   .ngo-event-card-body {
     width: 100%;
-    padding: 24px 20px;
+    padding: 24px 16px;
   }
 
   .events-nav-prev {
@@ -328,4 +346,3 @@
     transform: none !important;
   }
 }
-

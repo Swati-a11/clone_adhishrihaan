@@ -4,6 +4,7 @@ import MainContent from "./components/MainContent";
 import FocusAreas from "./components/Focus_Areas";
 import Grant from "./components/Grant";
 import Events from "./components/Events";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <FocusAreas />
       <Grant />
       <Events />
+      <Footer />
     </>
   );
 }

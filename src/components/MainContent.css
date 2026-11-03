@@ -1,13 +1,8 @@
-/* Main Content Wrapper */
 .main-content-section {
   width: 100%;
   font-family: "Poppins", sans-serif;
 }
 
-/* ==========================================================================
-   Smooth Scroll-Reveal Animation
-   Applies to: Mission Intro, Headings Wrap, and each Pillar Row
-   ========================================================================== */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -21,7 +16,6 @@
   transform: translateY(0);
 }
 
-/* Accessibility: Respect user motion preference */
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     opacity: 1 !important;
@@ -30,9 +24,6 @@
   }
 }
 
-/* ==========================================================================
-   1. Green Ribbon Banner
-   ========================================================================== */
 .mission-ribbon {
   background-color: #2B4D1B;
   padding: 18px 0;
@@ -48,9 +39,6 @@
   line-height: 1.5;
 }
 
-/* ==========================================================================
-   2. Dark Green Intro & Mission Statement
-   ========================================================================== */
 .mission-intro {
   background-color: #293B21;
   padding: 40px 0 45px;
@@ -95,9 +83,6 @@
   user-select: none;
 }
 
-/* ==========================================================================
-   3. What We Do / Our Pillars of Support
-   ========================================================================== */
 .pillars-section {
   background-color: #ffffff;
   padding: 65px 0 70px;
@@ -128,7 +113,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Pillars List */
 .pillars-list {
   max-width: 1100px;
   margin: 0 auto;
@@ -178,9 +162,6 @@
   margin: 0;
 }
 
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
 @media (max-width: 991.98px) {
   .mission-ribbon-text {
     font-size: 17px;

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Documentation & plans
+implementation.md
+implementation_plan.md
+*plan*.md

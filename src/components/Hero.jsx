@@ -50,8 +50,10 @@ const Hero = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="hero-slider-wrapper position-relative w-100 overflow-hidden">
-        {SLIDES.map((slide, index) => {
+<div
+  className="hero-slider-wrapper position-relative w-100 overflow-hidden"
+  style={{ height: "700px", minHeight: "100px" }}
+>        {SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
             <div

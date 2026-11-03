@@ -1,0 +1,253 @@
+/* Main Content Wrapper */
+.main-content-section {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==========================================================================
+   1. Green Ribbon Banner
+   ========================================================================== */
+.mission-ribbon {
+  background-color: #2B4D1B;
+  padding: 18px 0;
+  width: 100%;
+}
+
+.mission-ribbon-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. Dark Green Intro & Mission Statement
+   ========================================================================== */
+.mission-intro {
+  background-color: #293B21;
+  padding: 40px 0 45px;
+  width: 100%;
+}
+
+.mission-intro-paragraph {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #ffffff;
+  max-width: 950px;
+  margin: 0 auto 30px;
+}
+
+.mission-action-links {
+  gap: 15px;
+}
+
+.mission-action-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.25s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.mission-action-link:hover {
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.mission-action-divider {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 15px;
+  user-select: none;
+}
+
+/* ==========================================================================
+   3. What We Do / Our Pillars of Support
+   ========================================================================== */
+.pillars-section {
+  background-color: #ffffff;
+  padding: 65px 0 70px;
+  width: 100%;
+}
+
+.pillars-heading-wrap {
+  margin-bottom: 55px;
+}
+
+.pillars-main-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #2c3e23;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pillars-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b4d1b;
+  margin-top: 6px;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Pillars List */
+.pillars-list {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pillar-row {
+  margin-bottom: 45px;
+}
+
+.pillar-row:last-child {
+  margin-bottom: 0;
+}
+
+.pillar-title-col {
+  padding-right: 25px;
+}
+
+.pillar-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b4d1b;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.pillar-desc-col {
+  padding-left: 15px;
+}
+
+.pillar-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #212529;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.pillar-care-in-action {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #2b4d1b;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .mission-ribbon-text {
+    font-size: 17px;
+    letter-spacing: 0.8px;
+  }
+
+  .mission-intro-paragraph {
+    font-size: 16px;
+  }
+
+  .mission-action-link {
+    font-size: 18px;
+  }
+
+  .pillars-main-title {
+    font-size: 38px;
+  }
+
+  .pillars-subtitle {
+    font-size: 18px;
+  }
+
+  .pillar-name {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .pillar-desc-col {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mission-ribbon {
+    padding: 14px 10px;
+  }
+
+  .mission-ribbon-text {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .mission-intro {
+    padding: 30px 15px;
+  }
+
+  .mission-intro-paragraph {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .mission-action-links {
+    gap: 12px;
+  }
+
+  .mission-action-link {
+    font-size: 16px;
+  }
+
+  .pillars-section {
+    padding: 45px 0 50px;
+  }
+
+  .pillars-heading-wrap {
+    margin-bottom: 35px;
+  }
+
+  .pillars-main-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .pillars-subtitle {
+    font-size: 15px;
+  }
+
+  .pillar-row {
+    margin-bottom: 35px;
+  }
+
+  .pillar-name {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .pillar-desc-col {
+    padding-left: 12px;
+  }
+
+  .pillar-description,
+  .pillar-care-in-action {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+

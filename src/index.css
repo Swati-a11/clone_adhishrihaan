@@ -1,9 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --green-dark: #33501f;
+  --bs-body-font-family: "Poppins", system-ui, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: var(--bs-body-font-family);
 }

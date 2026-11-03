@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import MainContent from "./components/MainContent";
+import FocusAreas from "./components/Focus_Areas";
+import Grant from "./components/Grant";
 
 export default function App() {
   return (
@@ -8,6 +10,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <MainContent />
+      <FocusAreas />
+      <Grant />
     </>
   );
 }

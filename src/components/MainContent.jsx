@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import "./MainContent.css";
 
 const PILLARS = [
@@ -34,8 +35,41 @@ const PILLARS = [
 ];
 
 const MainContent = () => {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    const root = mainRef.current;
+    if (!root) return;
+
+    // Select all elements marked for scroll reveal
+    const revealElements = root.querySelectorAll(".reveal-on-scroll");
+    if (!revealElements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            // Run animation only once
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <main className="main-content-section">
+    <main ref={mainRef} className="main-content-section">
       {/* 1. Green Ribbon Banner */}
       <section className="mission-ribbon">
         <div className="container text-center">
@@ -46,7 +80,7 @@ const MainContent = () => {
       </section>
 
       {/* 2. Dark Green Intro & Mission Statement */}
-      <section className="mission-intro">
+      <section className="mission-intro reveal-on-scroll">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 text-center">
@@ -72,16 +106,19 @@ const MainContent = () => {
       {/* 3. What We Do / Our Pillars of Support */}
       <section className="pillars-section">
         <div className="container">
-          {/* Section Headings */}
-          <div className="text-center pillars-heading-wrap">
+          {/* Section Headings - Slides smoothly upward */}
+          <div className="text-center pillars-heading-wrap reveal-on-scroll">
             <h2 className="pillars-main-title">WHAT WE DO</h2>
             <h3 className="pillars-subtitle">OUR PILLARS OF SUPPORT</h3>
           </div>
 
-          {/* Pillars List */}
+          {/* Pillars List - Each pillar slides smoothly upward as it enters viewport */}
           <div className="pillars-list">
             {PILLARS.map((pillar) => (
-              <div key={pillar.id} className="row pillar-row align-items-start">
+              <div
+                key={pillar.id}
+                className="row pillar-row align-items-start reveal-on-scroll"
+              >
                 {/* Left Title Column */}
                 <div className="col-12 col-md-4 col-lg-3 pillar-title-col">
                   <h4 className="pillar-name">{pillar.title}</h4>
@@ -102,4 +139,3 @@ const MainContent = () => {
 };
 
 export default MainContent;
-

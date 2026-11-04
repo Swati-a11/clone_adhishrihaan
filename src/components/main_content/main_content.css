@@ -255,6 +255,7 @@
 
   .pillars-heading-wrap {
     margin-bottom: 35px;
+    padding: 0 20px;
   }
 
   .pillars-main-title {
@@ -266,6 +267,10 @@
     font-size: 15px;
   }
 
+  .pillars-list {
+    padding: 0 20px;
+  }
+
   .pillar-row {
     margin-bottom: 35px;
   }
@@ -275,6 +280,7 @@
     max-width: 100% !important;
     flex: 0 0 100% !important;
     padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   .pillar-desc-col {
@@ -282,13 +288,18 @@
     max-width: 100% !important;
     flex: 0 0 100% !important;
     padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .pillar-name {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 10px;
     white-space: normal;
+  }
+
+  .pillar-name br {
+    display: none;
   }
 
   .pillar-description,

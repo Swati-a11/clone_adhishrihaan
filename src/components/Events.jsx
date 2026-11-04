@@ -64,17 +64,21 @@ const PAST_EVENTS = [
 export default function Events() {
   const [activeTab, setActiveTab] = useState("past");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(null);
   const [direction, setDirection] = useState("next");
-  const [animating, setAnimating] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const sectionRef = useRef(null);
 
   const goTo = (index, dir) => {
-    if (animating || index === currentIndex) return;
+    if (isTransitioning || index === currentIndex) return;
+    setPrevIndex(currentIndex);
     setDirection(dir);
-    setAnimating(true);
+    setIsTransitioning(true);
     setCurrentIndex(index);
-    setTimeout(() => setAnimating(false), 600);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setPrevIndex(null);
+    }, 600);
   };
 
   const handlePrev = () => {
@@ -88,12 +92,12 @@ export default function Events() {
   };
 
   useEffect(() => {
-    if (activeTab !== "past" || isPaused) return;
+    if (activeTab !== "past") return;
     const timer = setInterval(() => {
       handleNext();
     }, 4000);
     return () => clearInterval(timer);
-  }, [activeTab, currentIndex, isPaused, animating]);
+  }, [activeTab, currentIndex, isTransitioning]);
 
   useEffect(() => {
     const root = sectionRef.current;
@@ -150,11 +154,7 @@ export default function Events() {
           </div>
         </div>
 
-        <div
-          className="events-outer-card events-reveal-item"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="events-outer-card events-reveal-item">
           {activeTab === "past" ? (
             <div className="events-card-wrapper">
               <div className="events-card-container">
@@ -181,12 +181,19 @@ export default function Events() {
                 <div className="events-slider-track">
                   {PAST_EVENTS.map((event, idx) => {
                     const isActive = idx === currentIndex;
+                    const isPrev = idx === prevIndex;
+
+                    let cardClass = "";
+                    if (isActive) {
+                      cardClass = `active enter-${direction}`;
+                    } else if (isPrev) {
+                      cardClass = `exit-${direction}`;
+                    }
+
                     return (
                       <div
                         key={event.id}
-                        className={`ngo-event-horizontal-card ${
-                          isActive ? `active slide-${direction}` : ""
-                        }`}
+                        className={`ngo-event-horizontal-card ${cardClass}`}
                         aria-hidden={!isActive}
                       >
                         <div className="ngo-event-card-img-col">

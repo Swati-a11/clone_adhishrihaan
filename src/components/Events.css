@@ -109,34 +109,83 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+  opacity: 0;
   pointer-events: none;
   z-index: 0;
 }
 
 .ngo-event-horizontal-card.active {
+  transform: translateX(0);
   opacity: 1;
   pointer-events: auto;
+  z-index: 2;
+}
+
+/* Moving Next (Right to Left): Incoming enters from right (100% -> 0), Outgoing exits to left (0 -> -100%) */
+.ngo-event-horizontal-card.enter-next {
+  animation: eventSlideEnterNext 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  z-index: 2;
+}
+
+.ngo-event-horizontal-card.exit-next {
+  animation: eventSlideExitNext 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  pointer-events: none;
   z-index: 1;
 }
 
-.ngo-event-horizontal-card.active.slide-next {
-  transform: translateX(0);
-}
-
-.ngo-event-horizontal-card.active.slide-prev {
-  animation: eventSlideFromLeft 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-@keyframes eventSlideFromLeft {
+@keyframes eventSlideEnterNext {
   from {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(100%);
+    opacity: 1;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes eventSlideExitNext {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+/* Moving Prev (Left to Right): Incoming enters from left (-100% -> 0), Outgoing exits to right (0 -> 100%) */
+.ngo-event-horizontal-card.enter-prev {
+  animation: eventSlideEnterPrev 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  z-index: 2;
+}
+
+.ngo-event-horizontal-card.exit-prev {
+  animation: eventSlideExitPrev 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes eventSlideEnterPrev {
+  from {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes eventSlideExitPrev {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
     opacity: 1;
   }
 }

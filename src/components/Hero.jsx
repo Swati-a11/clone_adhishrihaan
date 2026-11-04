@@ -25,17 +25,20 @@ const SLIDES = [
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState(null);
   const [direction, setDirection] = useState("next"); // "next" = right-to-left, "prev" = left-to-right
-  const [animating, setAnimating] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const timerRef = useRef(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const goTo = (nextIndex, dir) => {
-    if (animating) return;
+    if (isTransitioning || nextIndex === currentSlide) return;
+    setPrevSlide(currentSlide);
     setDirection(dir);
-    setAnimating(true);
+    setIsTransitioning(true);
     setCurrentSlide(nextIndex);
-    setTimeout(() => setAnimating(false), 700);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setPrevSlide(null);
+    }, 700);
   };
 
   const handleNext = () => {
@@ -47,27 +50,30 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(handleNext, 3800);
-    }
-    return () => clearInterval(timerRef.current);
-  }, [isPaused, currentSlide]);
+    const timer = setInterval(() => {
+      handleNext();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [currentSlide, isTransitioning]);
 
   return (
-    <section
-      className="hero-section position-relative"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="hero-section position-relative">
       <div className="hero-slider-wrapper position-relative w-100 overflow-hidden">
         {SLIDES.map((slide, index) => {
           const isActive = index === currentSlide;
+          const isPrev = index === prevSlide;
+
+          let slideClass = "";
+          if (isActive) {
+            slideClass = `active enter-${direction}`;
+          } else if (isPrev) {
+            slideClass = `exit-${direction}`;
+          }
+
           return (
             <div
               key={slide.id}
-              className={`hero-slide position-absolute top-0 start-0 w-100 h-100 ${
-                isActive ? `active slide-in-${direction}` : ""
-              }`}
+              className={`hero-slide position-absolute top-0 start-0 w-100 h-100 ${slideClass}`}
               style={{
                 backgroundImage: `url("${slide.image}")`,
               }}

@@ -21,14 +21,27 @@ const GRANT_SLIDES = [
 
 const Grant = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const sectionRef = useRef(null);
+
+  const handleNext = () => {
+    if (isTransitioning) return;
+    setPrevSlide(currentSlide);
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => (prev + 1) % GRANT_SLIDES.length);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setPrevSlide(null);
+    }, 700);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % GRANT_SLIDES.length);
-    }, 3800);
+      handleNext();
+    }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentSlide, isTransitioning]);
 
   useEffect(() => {
     const root = sectionRef.current;
@@ -90,10 +103,19 @@ const Grant = () => {
             <div className="grant-carousel-wrapper">
               {GRANT_SLIDES.map((slide, index) => {
                 const isActive = index === currentSlide;
+                const isPrev = index === prevSlide;
+
+                let slideClass = "";
+                if (isActive) {
+                  slideClass = "active enter-next";
+                } else if (isPrev) {
+                  slideClass = "exit-next";
+                }
+
                 return (
                   <div
                     key={slide.id}
-                    className={`grant-slide ${isActive ? "active" : ""}`}
+                    className={`grant-slide ${slideClass}`}
                   >
                     <img
                       src={slide.image}

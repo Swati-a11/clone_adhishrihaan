@@ -277,7 +277,7 @@
   }
 
   .footer-bottom-row {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     gap: 14px;
   }

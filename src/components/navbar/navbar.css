@@ -194,10 +194,8 @@
     font-weight: 500;
   }
 
-  .navbar-toggler-icon {
-    filter: invert(1) brightness(2);
-    width: 22px;
-    height: 22px;
+  .burger-icon {
+    display: block;
   }
 
   .navbar-collapse {

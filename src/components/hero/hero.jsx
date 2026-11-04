@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "./hero.css";
 
 import slide1 from "../../assets/hero/5.png";

@@ -186,12 +186,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
-    font-size: 14px;
+    width: 34px;
+    height: 28px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
     line-height: 1;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .burger-icon {

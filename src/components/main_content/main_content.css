@@ -90,14 +90,14 @@
 }
 
 .pillars-heading-wrap {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
 }
 
 .pillars-main-title {
   font-family: "Poppins", sans-serif;
-  font-size: 45px;
+  font-size: 38px;
   font-weight: 800;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
   color: #2c3e23;
   margin: 0;
   line-height: 1.2;
@@ -105,7 +105,7 @@
 
 .pillars-subtitle {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: #2b4d1b;
   margin-top: 6px;
@@ -114,7 +114,7 @@
 }
 
 .pillars-list {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -132,13 +132,13 @@
 
 .pillar-name {
   font-family: "Poppins", sans-serif;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 21px;
+  font-weight: 700;
   color: #2b4d1b;
   line-height: 1.15;
   text-transform: uppercase;
   margin: 0;
-  white-space: nowrap;
+  letter-spacing: -0.2px;
 }
 
 .pillar-desc-col {
@@ -147,19 +147,19 @@
 
 .pillar-description {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
-  color: #212529;
-  line-height: 1.75;
+  color: #374151;
+  line-height: 1.65;
   margin-bottom: 12px;
 }
 
 .pillar-care-in-action {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #2b4d1b;
-  line-height: 1.75;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -178,16 +178,16 @@
   }
 
   .pillars-main-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .pillars-subtitle {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .pillar-name {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 700;
     margin-bottom: 12px;
   }
 
@@ -239,12 +239,12 @@
   }
 
   .pillars-main-title {
-    font-size: 32px;
+    font-size: 30px;
     letter-spacing: -1px;
   }
 
   .pillars-subtitle {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .pillar-row {
@@ -252,8 +252,8 @@
   }
 
   .pillar-name {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 10px;
   }
 
@@ -263,7 +263,7 @@
 
   .pillar-description,
   .pillar-care-in-action {
-    font-size: 14px;
-    line-height: 1.65;
+    font-size: 13.5px;
+    line-height: 1.6;
   }
 }

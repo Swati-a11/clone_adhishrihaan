@@ -1,6 +1,6 @@
 .our-events-section {
   background-color: #EFF2EA;
-  padding: 45px 0 60px 0;
+  padding: 45px 0 100px 0;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
@@ -391,7 +391,7 @@
 
 @media (max-width: 768px) {
   .our-events-section {
-    padding: 35px 0 45px 0;
+    padding: 35px 0 80px 0;
   }
 
   .events-title {

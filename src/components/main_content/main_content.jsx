@@ -4,7 +4,13 @@ import "./main_content.css";
 const PILLARS = [
   {
     id: "capacity-building",
-    title: "CAPACITY BUILDING",
+    title: (
+      <>
+        CAPACITY
+        <br />
+        BUILDING
+      </>
+    ),
     description:
       "We offer tailored training programs, essential funding assistance, and critical technological support to enhance the operational efficiency and program effectiveness of our partner NGOs. This includes workshops on project management, financial literacy, fundraising strategies, and digital tools. We believe in strengthening their internal capabilities so they can serve their communities even better.",
     careInAction:
@@ -105,11 +111,11 @@ const MainContent = () => {
                 key={pillar.id}
                 className="row pillar-row align-items-start reveal-on-scroll"
               >
-                <div className="col-12 col-md-5 col-lg-4 pillar-title-col">
+                <div className="col-12 col-md-4 col-lg-3 pillar-title-col">
                   <h4 className="pillar-name">{pillar.title}</h4>
                 </div>
 
-                <div className="col-12 col-md-7 col-lg-8 pillar-desc-col">
+                <div className="col-12 col-md-8 col-lg-9 pillar-desc-col">
                   <p className="pillar-description">{pillar.description}</p>
                   <p className="pillar-care-in-action">{pillar.careInAction}</p>
                 </div>

@@ -142,18 +142,6 @@ export default function Footer() {
         <div className="footer-divider-line" />
 
         <div className="footer-bottom-row">
-          <p className="footer-copyright">
-            © 2025 Adhishrihaan | All rights reserved | Designed by{" "}
-            <a
-              href="https://akkistudios.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="akki-link"
-            >
-              Akki Studios
-            </a>
-          </p>
-
           <nav className="footer-nav-menu" aria-label="Footer Navigation">
             <a href="https://adhishrihaan.org/" className="footer-nav-link">
               <svg
@@ -184,6 +172,18 @@ export default function Footer() {
               Contact Us
             </a>
           </nav>
+
+          <p className="footer-copyright">
+            © 2025 Adhishrihaan | All rights reserved | Designed by{" "}
+            <a
+              href="https://akkistudios.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="akki-link"
+            >
+              Akki Studios
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -229,7 +229,7 @@
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 45px 20px 30px 20px;
+    padding: 45px 20px 45px 20px;
     border-radius: 25px 25px 0 0;
   }
 
@@ -279,11 +279,7 @@
   .footer-bottom-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-  }
-
-  .footer-copyright {
-    display: none;
+    gap: 14px;
   }
 
   .footer-nav-menu {
@@ -291,5 +287,13 @@
     flex-wrap: wrap;
     gap: 8px;
     font-size: 0.85rem;
+  }
+
+  .footer-copyright {
+    display: block !important;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 8px;
+    line-height: 1.5;
   }
 }

@@ -1,6 +1,17 @@
+import { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="site-header">
       <nav className="navbar navbar-expand-lg navbar-dark nav-pill container-fluid">
@@ -22,27 +33,29 @@ const Navbar = () => {
         </a>
 
         <button
-          className="navbar-toggler"
+          className={`navbar-toggler ${isOpen ? "is-active" : ""}`}
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
-          aria-expanded="false"
+          onClick={toggleMenu}
+          aria-expanded={isOpen}
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {isOpen ? (
+            <span className="close-menu-icon">✕</span>
+          ) : (
+            <span className="navbar-toggler-icon"></span>
+          )}
         </button>
 
-        <div className="collapse navbar-collapse" id="mainNavbar">
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="mainNavbar">
           <ul className="navbar-nav ms-auto align-items-lg-center">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/" onClick={closeMenu}>
                 Home
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/about-us/">
+              <a className="nav-link" href="/about-us/" onClick={closeMenu}>
                 About
               </a>
             </li>
@@ -51,25 +64,26 @@ const Navbar = () => {
               <a
                 className="nav-link"
                 href="/the-shrihaan-sahyog-grant/"
+                onClick={closeMenu}
               >
                 The Shrihaan Sahyog Grant
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/initiatives/">
+              <a className="nav-link" href="/initiatives/" onClick={closeMenu}>
                 Initiatives
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/our-impact/">
+              <a className="nav-link" href="/our-impact/" onClick={closeMenu}>
                 Our Impact
               </a>
             </li>
 
             <li className="nav-item dropdown hover-dropdown">
-              <a className="nav-link" href="/events/">
+              <a className="nav-link" href="/events/" onClick={closeMenu}>
                 Events
               </a>
 
@@ -86,6 +100,7 @@ const Navbar = () => {
                   <a
                     className="dropdown-item"
                     href="/upcoming-events/"
+                    onClick={closeMenu}
                   >
                     Upcoming Events
                   </a>
@@ -99,6 +114,7 @@ const Navbar = () => {
                   <a
                     className="dropdown-item"
                     href="/past-events/"
+                    onClick={closeMenu}
                   >
                     Past Events
                   </a>
@@ -107,13 +123,13 @@ const Navbar = () => {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="/news-media/">
+              <a className="nav-link" href="/news-media/" onClick={closeMenu}>
                 News &amp; Media
               </a>
             </li>
 
             <li className="nav-item dropdown hover-dropdown">
-              <a className="nav-link" href="/get-involved/">
+              <a className="nav-link" href="/get-involved/" onClick={closeMenu}>
                 Get Involved
               </a>
 
@@ -127,7 +143,7 @@ const Navbar = () => {
 
               <ul className="dropdown-menu dropdown-menu-end">
                 <li>
-                  <a className="dropdown-item" href="/donate/">
+                  <a className="dropdown-item" href="/donate/" onClick={closeMenu}>
                     Donate
                   </a>
                 </li>
@@ -137,7 +153,7 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                  <a className="dropdown-item" href="/volunteer/">
+                  <a className="dropdown-item" href="/volunteer/" onClick={closeMenu}>
                     Volunteer
                   </a>
                 </li>

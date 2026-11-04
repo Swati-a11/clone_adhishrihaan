@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import "./Events.css";
+import "./event.css";
 
-import megaHealthImg from "../assets/events/mega_health_camp.jpg";
-import stationeryImg from "../assets/events/stationery_distribution.webp";
-import anemiaImg from "../assets/events/anemia_screening.webp";
-import catShelterImg from "../assets/events/cat_shelter.webp";
+import megaHealthImg from "../../assets/events/mega_health_camp.jpg";
+import stationeryImg from "../../assets/events/stationery_distribution.webp";
+import anemiaImg from "../../assets/events/anemia_screening.webp";
+import catShelterImg from "../../assets/events/cat_shelter.webp";
 
 const PAST_EVENTS = [
   {

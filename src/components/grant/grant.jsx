@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import "./Grant.css";
+import "./grant.css";
 
-import slide1 from "../assets/grant/6th.png";
-import slide2 from "../assets/grant/5th.png";
-import slide3 from "../assets/grant/4th.png";
-import slide4 from "../assets/grant/3rd.png";
-import slide5 from "../assets/grant/2nd.png";
-import slide6 from "../assets/grant/7th.png";
-import slide7 from "../assets/grant/1one.png";
+import slide1 from "../../assets/grant/6th.png";
+import slide2 from "../../assets/grant/5th.png";
+import slide3 from "../../assets/grant/4th.png";
+import slide4 from "../../assets/grant/3rd.png";
+import slide5 from "../../assets/grant/2nd.png";
+import slide6 from "../../assets/grant/7th.png";
+import slide7 from "../../assets/grant/1one.png";
 
 const GRANT_SLIDES = [
   { id: 1, image: slide1, alt: "Children in school supported by grant" },

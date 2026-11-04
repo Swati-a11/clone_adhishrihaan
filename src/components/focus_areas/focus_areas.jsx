@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
-import "./Focus_Areas.css";
+import "./focus_areas.css";
 
-import womanChildImg from "../assets/focus_areas/woman_child_welfare.jpg";
-import educationImg from "../assets/focus_areas/education.jpg";
-import healthcareImg from "../assets/focus_areas/healthcare.jpg";
-import animalWelfareImg from "../assets/focus_areas/animal_welfare.jpg";
-import elderlyCareImg from "../assets/focus_areas/elderly_care.jpg";
-import skillDevImg from "../assets/focus_areas/skill_development.jpg";
-import environmentImg from "../assets/focus_areas/environment.jpg";
+import womanChildImg from "../../assets/focus_areas/woman_child_welfare.jpg";
+import educationImg from "../../assets/focus_areas/education.jpg";
+import healthcareImg from "../../assets/focus_areas/healthcare.jpg";
+import animalWelfareImg from "../../assets/focus_areas/animal_welfare.jpg";
+import elderlyCareImg from "../../assets/focus_areas/elderly_care.jpg";
+import skillDevImg from "../../assets/focus_areas/skill_development.jpg";
+import environmentImg from "../../assets/focus_areas/environment.jpg";
 
 const FocusAreas = () => {
   const sectionRef = useRef(null);

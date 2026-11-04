@@ -111,15 +111,15 @@
 .hero-btn {
   background-color: transparent;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: #ffffff;
   text-decoration: none;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 30px;
-  padding: 10px 32px;
+  padding: 10px 42px;
   display: inline-block;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

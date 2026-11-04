@@ -26,7 +26,7 @@ const Grant = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % GRANT_SLIDES.length);
-    }, 3000);
+    }, 3800);
     return () => clearInterval(timer);
   }, []);
 
@@ -61,7 +61,7 @@ const Grant = () => {
 
   return (
     <section ref={sectionRef} className="grant-section">
-      <div className="container">
+      <div className="container grant-container">
         <div className="row align-items-center g-4 g-lg-5">
           <div className="col-12 col-lg-6 order-2 order-lg-1 grant-reveal-item">
             <h2 className="grant-title">The Shrihaan Sahyog Grant</h2>

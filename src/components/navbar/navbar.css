@@ -171,11 +171,11 @@
   }
 
   .navbar-toggler {
-    padding: 4px;
+    padding: 6px 8px;
     color: #ffffff;
     border: none;
-    border-radius: 0;
-    background: transparent;
+    border-radius: 6px;
+    background: #2B4D1B;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,20 +186,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border: 1.5px solid #ffffff;
-    border-radius: 4px;
-    font-size: 13px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
     line-height: 1;
     color: #ffffff;
     font-weight: 500;
   }
 
   .navbar-toggler-icon {
-    filter: invert(1);
-    width: 26px;
-    height: 26px;
+    filter: invert(1) brightness(2);
+    width: 22px;
+    height: 22px;
   }
 
   .navbar-collapse {

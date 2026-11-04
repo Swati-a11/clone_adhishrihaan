@@ -135,14 +135,31 @@
 
 @media (max-width: 575.98px) {
   .grant-section {
-    padding: 40px 0 45px;
+    padding: 35px 0 40px;
   }
 
   .grant-title {
     font-size: 24px;
+    margin-bottom: 16px;
   }
 
   .grant-paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .grant-carousel-wrapper {
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .grant-btn {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+}
     font-size: 14px;
     line-height: 1.65;
   }

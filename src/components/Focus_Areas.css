@@ -154,35 +154,43 @@
 
 @media (max-width: 575.98px) {
   .focus-areas-section {
-    padding: 45px 0 50px;
+    padding: 35px 0 40px;
   }
 
   .focus-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 16px;
+    padding: 0 4px;
   }
 
   .focus-col-dual {
-    gap: 15px;
+    gap: 16px;
   }
 
-  .card-tall,
+  .card-tall {
+    min-height: 280px;
+    height: 280px;
+    border-radius: 16px;
+  }
+
   .card-short {
     min-height: 180px;
     height: 180px;
+    border-radius: 16px;
   }
 
   .focus-main-title {
-    font-size: 30px;
-    letter-spacing: -1px;
+    font-size: 28px;
+    letter-spacing: -0.8px;
   }
 
   .focus-subtitle {
-    font-size: 15px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
   }
 
   .focus-areas-header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 }
 

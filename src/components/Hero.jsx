@@ -119,6 +119,15 @@ const Hero = () => {
         >
           ›
         </button>
+
+        <div className="hero-mobile-dots d-flex d-md-none">
+          {SLIDES.map((slide, idx) => (
+            <span
+              key={slide.id}
+              className={`hero-mobile-dot ${idx === currentSlide ? "active" : ""}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

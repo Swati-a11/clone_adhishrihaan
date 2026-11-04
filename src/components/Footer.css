@@ -229,12 +229,16 @@
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 55px 24px 35px 24px;
-    border-radius: 20px 20px 0 0;
+    padding: 45px 20px 30px 20px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .footer-inner-container {
+    padding: 0;
   }
 
   .footer-logo-img {
-    width: 180px;
+    width: 200px;
   }
 
   .footer-contact-grid {
@@ -242,20 +246,50 @@
     gap: 16px;
   }
 
+  .footer-contact-label {
+    font-size: 1rem;
+  }
+
+  .footer-section-title {
+    font-size: 1.15rem;
+    margin-top: 10px;
+  }
+
+  .footer-slogan {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-top: 10px;
+  }
+
+  .footer-donate-btn {
+    width: auto;
+    display: inline-block;
+    padding: 8px 24px;
+    font-size: 13px;
+  }
+
   .footer-col-right {
     align-items: flex-start;
   }
 
   .footer-divider-line {
-    margin: 36px 0 24px 0;
+    margin: 30px 0 20px 0;
   }
 
-  .footer-nav-menu {
-    gap: 8px;
-    font-size: 0.82rem;
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .footer-copyright {
-    font-size: 0.82rem;
+    display: none;
+  }
+
+  .footer-nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.85rem;
   }
 }

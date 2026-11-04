@@ -392,50 +392,117 @@
 
 @media (max-width: 768px) {
   .our-events-section {
-    padding: 48px 0 60px 0;
+    padding: 35px 0 45px 0;
   }
 
   .events-title {
-    font-size: 1.85rem;
+    font-size: 28px;
+    letter-spacing: -0.8px;
+    margin-bottom: 4px;
   }
 
   .events-subtitle {
-    font-size: 1rem;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .events-tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .events-tab-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 9999px;
   }
 
   .events-outer-card {
-    padding: 14px 14px 18px 14px;
+    border-radius: 20px;
+    margin: 20px 16px 0 16px;
+    padding: 0;
+    overflow: hidden;
   }
 
   .events-slider-track {
-    height: 580px;
+    height: auto;
+    min-height: 520px;
+    position: relative;
+    border-radius: 20px 20px 0 0;
   }
 
   .ngo-event-horizontal-card {
+    position: relative;
+    display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
+    opacity: 0;
+    display: none;
+  }
+
+  .ngo-event-horizontal-card.active {
+    display: flex;
+    opacity: 1;
+    position: relative;
   }
 
   .ngo-event-card-img-col {
     width: 100%;
     min-width: 100%;
-    height: 220px;
+    height: 250px;
   }
 
   .ngo-event-card-body {
     width: 100%;
-    height: calc(100% - 220px);
-    padding: 20px 16px;
+    height: auto;
+    padding: 22px 18px 24px 18px;
+  }
+
+  .ngo-event-card-title {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .ngo-event-card-meta {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .ngo-meta-pill {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .ngo-event-card-chips {
+    margin-bottom: 14px;
+    gap: 8px;
+  }
+
+  .ngo-event-card-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .ngo-event-card-cta {
+    padding: 10px 26px;
+    font-size: 14px;
   }
 
   .events-nav-prev {
     left: 8px;
-    top: 110px;
+    top: 125px;
   }
 
   .events-nav-next {
     right: 8px;
-    top: 110px;
+    top: 125px;
   }
 }
 

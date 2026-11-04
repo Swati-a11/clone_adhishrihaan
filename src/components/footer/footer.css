@@ -182,6 +182,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  padding-right: 45px;
 }
 
 .footer-nav-link {
@@ -224,6 +225,10 @@
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .footer-nav-menu {
+    padding-right: 0;
   }
 }
 
@@ -287,6 +292,7 @@
     flex-wrap: wrap;
     gap: 8px;
     font-size: 0.85rem;
+    padding-right: 0;
   }
 
   .footer-copyright {

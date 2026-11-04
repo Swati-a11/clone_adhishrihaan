@@ -3,6 +3,8 @@ import "./navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const [involvedOpen, setInvolvedOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -10,6 +12,20 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+    setEventsOpen(false);
+    setInvolvedOpen(false);
+  };
+
+  const toggleEvents = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setEventsOpen((prev) => !prev);
+  };
+
+  const toggleInvolved = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setInvolvedOpen((prev) => !prev);
   };
 
   return (
@@ -82,21 +98,44 @@ const Navbar = () => {
               </a>
             </li>
 
-            <li className="nav-item dropdown hover-dropdown">
-              <a className="nav-link" href="/events/" onClick={closeMenu}>
-                Events
-              </a>
+            <li className={`nav-item dropdown hover-dropdown ${eventsOpen ? "mobile-dropdown-open" : ""}`}>
+              <div
+                className="mobile-dropdown-header"
+                onClick={(e) => {
+                  if (window.innerWidth < 992) {
+                    toggleEvents(e);
+                  }
+                }}
+              >
+                <a
+                  className="nav-link"
+                  href="/events/"
+                  onClick={(e) => {
+                    if (window.innerWidth < 992) {
+                      e.preventDefault();
+                      setEventsOpen((prev) => !prev);
+                    } else {
+                      closeMenu();
+                    }
+                  }}
+                >
+                  Events
+                </a>
 
-              <button
-                className="dropdown-toggle dropdown-arrow"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="Open Events menu"
-              ></button>
+                <button
+                  className="dropdown-arrow-btn"
+                  type="button"
+                  onClick={toggleEvents}
+                  aria-label="Toggle Events menu"
+                >
+                  <span className="dropdown-caret-icon">
+                    {eventsOpen ? "▲" : "▼"}
+                  </span>
+                </button>
+              </div>
 
-              <ul className="dropdown-menu">
-                <li>
+              <ul className={`dropdown-menu ${eventsOpen ? "show-mobile" : ""}`}>
+                <li className="dropdown-sub-item">
                   <a
                     className="dropdown-item"
                     href="/upcoming-events/"
@@ -106,11 +145,7 @@ const Navbar = () => {
                   </a>
                 </li>
 
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-
-                <li>
+                <li className="dropdown-sub-item">
                   <a
                     className="dropdown-item"
                     href="/past-events/"
@@ -128,31 +163,50 @@ const Navbar = () => {
               </a>
             </li>
 
-            <li className="nav-item dropdown hover-dropdown">
-              <a className="nav-link" href="/get-involved/" onClick={closeMenu}>
-                Get Involved
-              </a>
+            <li className={`nav-item dropdown hover-dropdown ${involvedOpen ? "mobile-dropdown-open open-green" : ""}`}>
+              <div
+                className="mobile-dropdown-header"
+                onClick={(e) => {
+                  if (window.innerWidth < 992) {
+                    toggleInvolved(e);
+                  }
+                }}
+              >
+                <a
+                  className="nav-link"
+                  href="/get-involved/"
+                  onClick={(e) => {
+                    if (window.innerWidth < 992) {
+                      e.preventDefault();
+                      setInvolvedOpen((prev) => !prev);
+                    } else {
+                      closeMenu();
+                    }
+                  }}
+                >
+                  Get Involved
+                </a>
 
-              <button
-                className="dropdown-toggle dropdown-arrow"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="Open Get Involved menu"
-              ></button>
+                <button
+                  className="dropdown-arrow-btn"
+                  type="button"
+                  onClick={toggleInvolved}
+                  aria-label="Toggle Get Involved menu"
+                >
+                  <span className="dropdown-caret-icon">
+                    {involvedOpen ? "▲" : "▼"}
+                  </span>
+                </button>
+              </div>
 
-              <ul className="dropdown-menu dropdown-menu-end">
-                <li>
+              <ul className={`dropdown-menu dropdown-menu-end ${involvedOpen ? "show-mobile" : ""}`}>
+                <li className="dropdown-sub-item">
                   <a className="dropdown-item" href="/donate/" onClick={closeMenu}>
                     Donate
                   </a>
                 </li>
 
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-
-                <li>
+                <li className="dropdown-sub-item">
                   <a className="dropdown-item" href="/volunteer/" onClick={closeMenu}>
                     Volunteer
                   </a>

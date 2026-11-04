@@ -86,7 +86,7 @@
   background-repeat: no-repeat;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: filter 0.35s ease;
+  transition: filter 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card-tall {
@@ -101,7 +101,8 @@
 }
 
 .focus-card:hover {
-  filter: brightness(1.12);
+  filter: brightness(1.06);
+  box-shadow: 0 6px 20px rgba(43, 77, 27, 0.18), 0 0 16px rgba(255, 255, 255, 0.3);
 }
 
 .focus-card-overlay {
@@ -114,7 +115,7 @@
 }
 
 .focus-card:hover .focus-card-overlay {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.25) 45%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(43, 77, 27, 0.45) 0%, rgba(65, 115, 42, 0.2) 40%, rgba(255, 255, 255, 0.1) 80%, rgba(0, 0, 0, 0) 100%);
 }
 
 .focus-card-title {
@@ -129,8 +130,8 @@
 }
 
 .focus-card:hover .focus-card-title {
-  color: #173d35;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 991.98px) {

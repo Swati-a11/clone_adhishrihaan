@@ -134,6 +134,7 @@
   }
 
   .nav-pill {
+    position: static;
     width: 100%;
     max-width: 100%;
     min-height: auto;
@@ -145,6 +146,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    box-shadow: none;
   }
 
   .logo-link {
@@ -167,10 +169,17 @@
   }
 
   .close-menu-icon {
-    font-size: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid #ffffff;
+    border-radius: 4px;
+    font-size: 13px;
     line-height: 1;
     color: #ffffff;
-    font-weight: 300;
+    font-weight: 500;
   }
 
   .navbar-toggler-icon {
@@ -181,12 +190,20 @@
 
   .navbar-collapse {
     display: none;
-    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     width: 100%;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
-    border-top: 1px solid #e5e7eb;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid #1a1a1a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    max-height: calc(100vh - 65px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .navbar-collapse.show {
@@ -201,15 +218,20 @@
   }
 
   .navbar-nav .nav-item {
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #1a1a1a;
     width: 100%;
   }
 
+  .navbar-nav .nav-item:first-child .nav-link {
+    color: #2B4D1B !important;
+    font-weight: 500;
+  }
+
   .navbar-nav .nav-link {
-    color: #2C3E23 !important;
-    font-size: 15px;
+    color: #1a1a1a !important;
+    font-size: 16px;
     font-weight: 400;
-    padding: 14px 20px !important;
+    padding: 13px 20px !important;
     transform: none;
     display: block;
     width: 100%;
@@ -220,16 +242,41 @@
     background-color: #f8fafc;
   }
 
+  .navbar-nav .nav-item.dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+
+  .navbar-nav .nav-item.dropdown .nav-link {
+    width: auto;
+    display: inline-block;
+    padding-right: 6px !important;
+  }
+
   .dropdown-arrow {
-    display: none;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #1a1a1a;
+    font-size: 11px;
+    padding: 0 8px;
+    margin-left: 2px;
+    transform: none;
+    cursor: pointer;
   }
 
   .dropdown-menu {
     position: static !important;
+    width: 100%;
     margin-top: 0;
     background-color: #f8fafc;
     box-shadow: none;
     border-radius: 0;
+    border: none;
     border-top: 1px solid #E5E7EB;
     padding: 0;
   }

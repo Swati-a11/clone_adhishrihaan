@@ -89,37 +89,42 @@
   width: 100%;
 }
 
+.pillars-section .container {
+  max-width: 1210px;
+}
+
 .pillars-heading-wrap {
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 
 .pillars-main-title {
   font-family: "Poppins", sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  word-spacing: 0px;
   color: #2c3e23;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .pillars-subtitle {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   color: #2b4d1b;
-  margin-top: 6px;
+  margin-top: 4px;
   margin-bottom: 0;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .pillars-list {
-  max-width: 1140px;
+  max-width: 1210px;
   margin: 0 auto;
 }
 
 .pillar-row {
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .pillar-row:last-child {
@@ -132,35 +137,51 @@
 
 .pillar-name {
   font-family: "Poppins", sans-serif;
-  font-size: 21px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: #2b4d1b;
-  line-height: 1.15;
+  line-height: 1.25;
   text-transform: uppercase;
   margin: 0;
-  letter-spacing: -0.2px;
+  letter-spacing: 0;
 }
 
 .pillar-desc-col {
-  padding-left: 15px;
+  padding-left: 0;
 }
 
 .pillar-description {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
-  color: #374151;
-  line-height: 1.65;
-  margin-bottom: 12px;
+  color: #212529;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
 .pillar-care-in-action {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: #2b4d1b;
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .pillar-title-col {
+    flex: 0 0 27% !important;
+    max-width: 27% !important;
+    width: 27% !important;
+    padding-right: 20px;
+  }
+
+  .pillar-desc-col {
+    flex: 0 0 73% !important;
+    max-width: 73% !important;
+    width: 73% !important;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -178,21 +199,21 @@
   }
 
   .pillars-main-title {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .pillars-subtitle {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .pillar-name {
     font-size: 19px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 12px;
   }
 
   .pillar-desc-col {
-    padding-left: 12px;
+    padding-left: 0;
   }
 }
 
@@ -239,31 +260,41 @@
   }
 
   .pillars-main-title {
-    font-size: 30px;
+    font-size: 35px;
     letter-spacing: -1px;
   }
 
   .pillars-subtitle {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .pillar-row {
     margin-bottom: 35px;
   }
 
-  .pillar-name {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  .pillar-title-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-right: 0 !important;
   }
 
   .pillar-desc-col {
-    padding-left: 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+  }
+
+  .pillar-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
 
   .pillar-description,
   .pillar-care-in-action {
-    font-size: 13.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.65;
   }
 }

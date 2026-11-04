@@ -64,7 +64,36 @@ const PAST_EVENTS = [
 export default function Events() {
   const [activeTab, setActiveTab] = useState("past");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
+  const [animating, setAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef(null);
+
+  const goTo = (index, dir) => {
+    if (animating || index === currentIndex) return;
+    setDirection(dir);
+    setAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setAnimating(false), 600);
+  };
+
+  const handlePrev = () => {
+    const nextIdx = currentIndex === 0 ? PAST_EVENTS.length - 1 : currentIndex - 1;
+    goTo(nextIdx, "prev");
+  };
+
+  const handleNext = () => {
+    const nextIdx = currentIndex === PAST_EVENTS.length - 1 ? 0 : currentIndex + 1;
+    goTo(nextIdx, "next");
+  };
+
+  useEffect(() => {
+    if (activeTab !== "past" || isPaused) return;
+    const timer = setInterval(() => {
+      handleNext();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [activeTab, currentIndex, isPaused, animating]);
 
   useEffect(() => {
     const root = sectionRef.current;
@@ -96,16 +125,6 @@ export default function Events() {
     };
   }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? PAST_EVENTS.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === PAST_EVENTS.length - 1 ? 0 : prev + 1));
-  };
-
-  const currentEvent = PAST_EVENTS[currentIndex];
-
   return (
     <section className="our-events-section" ref={sectionRef}>
       <div className="container">
@@ -131,7 +150,11 @@ export default function Events() {
           </div>
         </div>
 
-        <div className="events-outer-card events-reveal-item">
+        <div
+          className="events-outer-card events-reveal-item"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {activeTab === "past" ? (
             <div className="events-card-wrapper">
               <div className="events-card-container">
@@ -155,53 +178,66 @@ export default function Events() {
                   </svg>
                 </button>
 
-                <div className="ngo-event-horizontal-card">
-                  <div className="ngo-event-card-img-col">
-                    <img
-                      src={currentEvent.image}
-                      alt={currentEvent.title}
-                      className="ngo-event-card-img"
-                    />
-                  </div>
+                <div className="events-slider-track">
+                  {PAST_EVENTS.map((event, idx) => {
+                    const isActive = idx === currentIndex;
+                    return (
+                      <div
+                        key={event.id}
+                        className={`ngo-event-horizontal-card ${
+                          isActive ? `active slide-${direction}` : ""
+                        }`}
+                        aria-hidden={!isActive}
+                      >
+                        <div className="ngo-event-card-img-col">
+                          <img
+                            src={event.image}
+                            alt={event.title}
+                            className="ngo-event-card-img"
+                          />
+                        </div>
 
-                  <div className="ngo-event-card-body">
-                    <h3 className="ngo-event-card-title">{currentEvent.title}</h3>
+                        <div className="ngo-event-card-body">
+                          <h3 className="ngo-event-card-title">{event.title}</h3>
 
-                    <div className="ngo-event-card-meta">
-                      <span className="ngo-meta-pill">
-                        <span className="ngo-meta-icon">📅</span>
-                        {currentEvent.date}
-                      </span>
-                      <span className="ngo-meta-pill">
-                        <span className="ngo-meta-icon">📍</span>
-                        {currentEvent.location}
-                      </span>
-                      <span className="ngo-meta-pill">
-                        <span className="ngo-meta-icon">🏢</span>
-                        {currentEvent.venue}
-                      </span>
-                    </div>
+                          <div className="ngo-event-card-meta">
+                            <span className="ngo-meta-pill">
+                              <span className="ngo-meta-icon">📅</span>
+                              {event.date}
+                            </span>
+                            <span className="ngo-meta-pill">
+                              <span className="ngo-meta-icon">📍</span>
+                              {event.location}
+                            </span>
+                            <span className="ngo-meta-pill">
+                              <span className="ngo-meta-icon">🏢</span>
+                              {event.venue}
+                            </span>
+                          </div>
 
-                    <div className="ngo-event-card-chips">
-                      <span className="ngo-chip ngo-chip-status">
-                        {currentEvent.status}
-                      </span>
-                      <span className="ngo-chip ngo-chip-cause">
-                        {currentEvent.cause}
-                      </span>
-                    </div>
+                          <div className="ngo-event-card-chips">
+                            <span className="ngo-chip ngo-chip-status">
+                              {event.status}
+                            </span>
+                            <span className="ngo-chip ngo-chip-cause">
+                              {event.cause}
+                            </span>
+                          </div>
 
-                    <p className="ngo-event-card-text">{currentEvent.excerpt}</p>
+                          <p className="ngo-event-card-text">{event.excerpt}</p>
 
-                    <a
-                      href={currentEvent.link}
-                      className="ngo-event-card-cta"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Read More
-                    </a>
-                  </div>
+                          <a
+                            href={event.link}
+                            className="ngo-event-card-cta"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Read More
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <button
@@ -231,7 +267,7 @@ export default function Events() {
                     key={event.id}
                     type="button"
                     className={`events-dot ${idx === currentIndex ? "active" : ""}`}
-                    onClick={() => setCurrentIndex(idx)}
+                    onClick={() => goTo(idx, idx > currentIndex ? "next" : "prev")}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
                 ))}

@@ -223,14 +223,13 @@
 
   .hero-slider-wrapper {
     height: auto;
-    aspect-ratio: 1440 / 742;
-    min-height: 200px;
+    aspect-ratio: 16 / 10;
     width: 100%;
   }
 
   .hero-slide {
-    background-size: 100% 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: center center;
   }
 
   .hero-buttons-container {
@@ -238,10 +237,10 @@
   }
 
   .hero-nav-arrow {
-    width: 28px;
-    height: 28px;
-    font-size: 18px;
-    opacity: 0.85 !important;
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+    opacity: 0.9 !important;
     pointer-events: auto !important;
     background-color: transparent;
     color: #ffffff;
@@ -249,10 +248,19 @@
   }
 
   .hero-nav-prev {
-    left: 8px;
+    left: 6px;
   }
 
   .hero-nav-next {
-    right: 8px;
+    right: 6px;
+  }
+
+  .hero-mobile-dots {
+    bottom: 8px;
+  }
+
+  .hero-mobile-dot {
+    width: 5px;
+    height: 5px;
   }
 }

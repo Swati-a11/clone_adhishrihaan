@@ -6,7 +6,7 @@ const PILLARS = [
     id: "capacity-building",
     title: (
       <>
-        CAPACITY
+        CAPACITY{" "}
         <br />
         BUILDING
       </>

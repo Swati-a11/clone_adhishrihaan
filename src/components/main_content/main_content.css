@@ -89,9 +89,7 @@
   width: 100%;
 }
 
-.pillars-section .container {
-  max-width: 1210px;
-}
+
 
 .pillars-heading-wrap {
   margin-bottom: 48px;
@@ -119,7 +117,7 @@
 }
 
 .pillars-list {
-  max-width: 1210px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -137,13 +135,14 @@
 
 .pillar-name {
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #2b4d1b;
   line-height: 1.25;
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .pillar-desc-col {
@@ -170,16 +169,16 @@
 
 @media (min-width: 768px) {
   .pillar-title-col {
-    flex: 0 0 27% !important;
-    max-width: 27% !important;
-    width: 27% !important;
+    flex: 0 0 33% !important;
+    max-width: 33% !important;
+    width: 33% !important;
     padding-right: 20px;
   }
 
   .pillar-desc-col {
-    flex: 0 0 73% !important;
-    max-width: 73% !important;
-    width: 73% !important;
+    flex: 0 0 67% !important;
+    max-width: 67% !important;
+    width: 67% !important;
     padding-left: 0;
   }
 }
@@ -207,7 +206,7 @@
   }
 
   .pillar-name {
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 12px;
   }
@@ -287,9 +286,10 @@
   }
 
   .pillar-name {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     margin-bottom: 10px;
+    white-space: normal;
   }
 
   .pillar-description,

@@ -125,8 +125,11 @@
   .site-header {
     padding: 0;
     position: relative;
+    width: 100vw;
     background-color: #2B4D1B;
     z-index: 1000;
+    left: 0;
+    right: 0;
   }
 
   .nav-pill {

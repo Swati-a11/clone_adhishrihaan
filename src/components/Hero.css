@@ -218,10 +218,19 @@
 @media (max-width: 767px) {
   .hero-section {
     margin-top: 0;
+    width: 100%;
   }
 
   .hero-slider-wrapper {
-    height: 380px;
+    height: auto;
+    aspect-ratio: 1440 / 742;
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .hero-slide {
+    background-size: 100% 100%;
+    background-position: center;
   }
 
   .hero-buttons-container {

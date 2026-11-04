@@ -136,7 +136,7 @@ export default function Events() {
           <h2 className="events-title">Our Events</h2>
           <p className="events-subtitle">What’s Next &amp; What’s Been</p>
 
-          <div className="events-tabs">
+          <div className="events-tabs d-none d-md-inline-flex">
             <button
               type="button"
               className={`events-tab-btn ${activeTab === "past" ? "active" : ""}`}
@@ -150,6 +150,16 @@ export default function Events() {
               onClick={() => setActiveTab("upcoming")}
             >
               Upcoming Events
+            </button>
+          </div>
+
+          <div className="events-mobile-tab-top d-flex d-md-none justify-content-center">
+            <button
+              type="button"
+              className={`events-tab-btn ${activeTab === "past" ? "active" : ""}`}
+              onClick={() => setActiveTab("past")}
+            >
+              Past Events
             </button>
           </div>
         </div>
@@ -285,6 +295,16 @@ export default function Events() {
               <p className="events-empty-text">No events found.</p>
             </div>
           )}
+        </div>
+
+        <div className="events-mobile-tab-bottom d-flex d-md-none justify-content-center mt-3">
+          <button
+            type="button"
+            className={`events-tab-btn ${activeTab === "upcoming" ? "active" : ""}`}
+            onClick={() => setActiveTab("upcoming")}
+          >
+            Upcoming Events
+          </button>
         </div>
       </div>
     </section>

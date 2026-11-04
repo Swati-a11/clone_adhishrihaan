@@ -138,6 +138,7 @@
   line-height: 1.15;
   text-transform: uppercase;
   margin: 0;
+  white-space: nowrap;
 }
 
 .pillar-desc-col {

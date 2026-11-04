@@ -25,23 +25,33 @@ const SLIDES = [
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState("next"); // "next" = right-to-left, "prev" = left-to-right
+  const [animating, setAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timerRef = useRef(null);
 
+  const goTo = (nextIndex, dir) => {
+    if (animating) return;
+    setDirection(dir);
+    setAnimating(true);
+    setCurrentSlide(nextIndex);
+    setTimeout(() => setAnimating(false), 700);
+  };
+
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    goTo((currentSlide + 1) % SLIDES.length, "next");
   };
 
   const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+    goTo((currentSlide - 1 + SLIDES.length) % SLIDES.length, "prev");
   };
 
   useEffect(() => {
     if (!isPaused) {
-      timerRef.current = setInterval(handleNext, 5000);
+      timerRef.current = setInterval(handleNext, 3800);
     }
     return () => clearInterval(timerRef.current);
-  }, [isPaused]);
+  }, [isPaused, currentSlide]);
 
   return (
     <section
@@ -56,7 +66,7 @@ const Hero = () => {
             <div
               key={slide.id}
               className={`hero-slide position-absolute top-0 start-0 w-100 h-100 ${
-                isActive ? "active" : ""
+                isActive ? `active slide-in-${direction}` : ""
               }`}
               style={{
                 backgroundImage: `url("${slide.image}")`,

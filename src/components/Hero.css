@@ -20,15 +20,39 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  transform: translateX(100%);
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
   pointer-events: none;
+  z-index: 0;
 }
 
-.hero-slide.active {
+/* Default auto-advance & next button: slide in from right (right-to-left) */
+.hero-slide.active.slide-in-next {
+  transform: translateX(0);
   opacity: 1;
   pointer-events: auto;
   z-index: 1;
+}
+
+/* Prev button: slide in from left (left-to-right) */
+.hero-slide.active.slide-in-prev {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  animation: slideFromLeft 0.7s ease-in-out forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .hero-buttons-container {

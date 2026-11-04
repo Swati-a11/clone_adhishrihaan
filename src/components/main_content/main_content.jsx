@@ -4,7 +4,13 @@ import "./main_content.css";
 const PILLARS = [
   {
     id: "capacity-building",
-    title: "CAPACITY BUILDING",
+    title: (
+      <>
+        CAPACITY
+        <br />
+        BUILDING
+      </>
+    ),
     description:
       "We offer tailored training programs, essential funding assistance, and critical technological support to enhance the operational efficiency and program effectiveness of our partner NGOs. This includes workshops on project management, financial literacy, fundraising strategies, and digital tools. We believe in strengthening their internal capabilities so they can serve their communities even better.",
     careInAction:
